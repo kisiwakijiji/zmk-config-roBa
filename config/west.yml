@@ -2,16 +2,19 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: urob-repo # 名前を新しくする
+    - name: urob
       url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
-      import: app/west.yml
-    - name: zmk-pmw3610-driver-urob # プロジェクト名を変更して衝突を回避
-      remote: urob-repo
+      import:
+        path: app/west.yml
+        # ↓ ここが重要：他で定義されている pmw3610 ドライバを無視させる
+        name-allowlist:
+          - zmk-pmw3610-driver
+    - name: zmk-pmw3610-driver
+      remote: urob
       revision: main
-      path: modules/zmk-pmw3610-driver # インストール先パスを指定
   self:
     path: config
