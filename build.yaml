@@ -18,5 +18,7 @@
 #
 ---
 include:
-  - board: xiao_ble
+  - board: seeed_xiao_ble_zmk  # 末尾に _zmk を追加
     shield: roBa_L
+  - board: seeed_xiao_ble_zmk
+    shield: roBa_R
