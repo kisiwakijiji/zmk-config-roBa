@@ -8,11 +8,7 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       revision: main
-      import:
-        path: app/west.yml
-        # zmk側の定義からpmw3610を除外し、自分の定義を優先させる
-        name-blocklist:
-          - zmk-pmw3610-driver
+      import: true # 'app/west.yml' を自動的に探しに行く最も安全な設定
     - name: zmk-pmw3610-driver
       remote: urob
       revision: main
