@@ -2,16 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: urob-remote
-      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: my-trackball-driver  # 名前を完全に独自のものに変更
-      remote: urob-remote
-      revision: main
-      path: modules/my-trackball-driver # インストール先も変える
   self:
     path: config

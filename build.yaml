@@ -18,7 +18,8 @@
 #
 ---
 include:
-  - board: seeed_xiao_ble  # seeeduino ではなく seeed に変更
+  - board: seeed_xiao_ble  # 'seeeduino' ではなく 'seeed'
     shield: roBa_L
   - board: seeed_xiao_ble
     shield: roBa_R
+    # snippet: studio-rpc-usb-uart  <-- ここを絶対に消す
