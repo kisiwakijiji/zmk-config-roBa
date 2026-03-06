@@ -18,7 +18,7 @@
 #
 ---
 include:
-  - board: seeed_xiao_ble@sense/zmk  # '@sense/zmk' を付ける
+  - board: seeed_xiao_ble@1.0.0/zmk  # '@sense/zmk' を付ける
     shield: roBa_L
-  - board: seeed_xiao_ble@sense/zmk
+  - board: seeed_xiao_ble@1.0.0/zmk
     shield: roBa_R
