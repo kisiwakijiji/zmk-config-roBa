@@ -2,15 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: urob # ← ここに urob の定義が必要です
+    - name: urob # ← ここで「urob = github.com/urob」だと定義します
       url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-pmw3610-driver # ← ここで urob を参照します
-      remote: urob
+    - name: zmk-pmw3610-driver
+      remote: urob # ← 上で定義した urob を使います
       revision: main
   self:
     path: config
