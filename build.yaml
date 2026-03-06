@@ -18,7 +18,7 @@
 #
 ---
 include:
-  - board: seeed_xiao_ble@sense/zmk  # これが最新のフルネーム形式です
+  - board: seeed_xiao_ble/zmk  # 前に試したものに近いですが、これが今の標準です
     shield: roBa_L
-  - board: seeed_xiao_ble@sense/zmk
+  - board: seeed_xiao_ble/zmk
     shield: roBa_R
