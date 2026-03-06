@@ -18,6 +18,5 @@
 #
 ---
 include:
-include:
   - board: seeed_xiao_ble
     shield: roBa_L
