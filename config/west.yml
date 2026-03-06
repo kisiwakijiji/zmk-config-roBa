@@ -9,11 +9,10 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    # 名前を 'urob-pmw3610' に変更し、過去の履歴を断ち切る
-    - name: urob-pmw3610
+    # 'name' を適当な名前にし、'repo-path' で実際のリポジトリを指定します
+    - name: pmw3610_driver_fresh
       remote: urob
-      repo: zmk-pmw3610-driver
+      repo-path: zmk-pmw3610-driver
       revision: main
-      path: drivers/pmw3610-new
   self:
     path: config
