@@ -18,7 +18,7 @@
 #
 ---
 include:
-  - board: seeed_xiao_ble_zmk  # 末尾に _zmk を追加
+  - board: seeed_xiao_ble/nrf52840/zmk  # スラッシュで区切る
     shield: roBa_L
-  - board: seeed_xiao_ble_zmk
+  - board: seeed_xiao_ble/nrf52840/zmk
     shield: roBa_R
