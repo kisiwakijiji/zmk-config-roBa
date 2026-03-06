@@ -12,5 +12,6 @@ manifest:
     - name: zmk-pmw3610-driver
       remote: urob
       revision: main
+      path: drivers/pmw3610-new  # ← ここを追記。インストール先を変えて衝突を回避！
   self:
     path: config
