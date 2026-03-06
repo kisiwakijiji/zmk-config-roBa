@@ -18,7 +18,7 @@
 #
 ---
 include:
-  - board: seeed_xiao_ble/zmk/nrf52840
+  - board: xiao_ble/nrf52840/zmk
     shield: roBa_L
-  - board: seeed_xiao_ble/zmk/nrf52840
+  - board: xiao_ble/nrf52840/zmk
     shield: roBa_R
