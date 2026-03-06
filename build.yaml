@@ -18,7 +18,7 @@
 #
 ---
 include:
-  - board: seeed_xiao_ble/nrf52840/zmk  # 前に試したものに近いですが、これが今の標準です
+  - board: seeed_xiao_ble
     shield: roBa_L
-  - board: seeed_xiao_ble/nrf52840/zmk
+  - board: seeed_xiao_ble
     shield: roBa_R
