@@ -9,9 +9,11 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-pmw3610-driver
+    # 名前を 'urob-pmw3610' に変更し、過去の履歴を断ち切る
+    - name: urob-pmw3610
       remote: urob
+      repo: zmk-pmw3610-driver
       revision: main
-      path: drivers/pmw3610-new  # ← ここを追記。インストール先を変えて衝突を回避！
+      path: drivers/pmw3610-new
   self:
     path: config
