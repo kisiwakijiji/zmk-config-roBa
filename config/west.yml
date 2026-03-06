@@ -8,7 +8,11 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       revision: main
-      import: app/west.yml # ここをシンプルに戻し、下で衝突を解決します
+      import:
+        path: app/west.yml
+        # zmk側の定義からpmw3610を除外し、自分の定義を優先させる
+        name-blocklist:
+          - zmk-pmw3610-driver
     - name: zmk-pmw3610-driver
       remote: urob
       revision: main
