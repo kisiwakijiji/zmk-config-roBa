@@ -18,7 +18,7 @@
 #
 ---
 include:
-  - board: seeed_xiao_ble@sense  # @sense を追加
+  - board: seeed_xiao_ble@1.0.0  # @sense を追加
     shield: roBa_L
-  - board: seeed_xiao_ble@sense
+  - board: seeed_xiao_ble@1.0.0
     shield: roBa_R
