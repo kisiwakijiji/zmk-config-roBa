@@ -1,1 +1,3 @@
-rsource "boards/shields/roBa/drivers/Kconfig"
+menu "PMW3610 Driver"
+    rsource "boards/shields/roBa/drivers/Kconfig"
+endmenu

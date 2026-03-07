@@ -1,101 +1,69 @@
-# Sensor data simulator
-#
-# Copyright (c) 2019 Nordic Semiconductor
-#
-# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
-#
+# PMW3610 Driver Configuration for ZMK
 
-menuconfig PMW3610_ALT
-  bool "PMW3610 mouse optical sensor"
-  select SPI
-  depends on INPUT
-  depends on DT_HAS_PIXART_PMW3610_ALT_ENABLED
-  help
-      Enable PMW3610 mouse optical sensor.
-
-if PMW3610_ALT
-
-config INPUT_PMW3610_INIT_PRIORITY
-    int "PMW3610 initialization priority"
-    default INPUT_INIT_PRIORITY
-
-config PMW3610_ALT_SWAP_XY
-  bool "Swap the X/Y axis of PMW3610 sensor"
-
-config PMW3610_ALT_INVERT_X
-  bool "Invert the X axis of PMW3610 sensor"
-
-config PMW3610_ALT_INVERT_Y
-  bool "Invert the Y axis of PMW3610 sensor"
-
-config PMW3610_ALT_INIT_POWER_UP_EXTRA_DELAY_MS
-  int "Extra power up init delay (ms)"
-  default 0
-  help
-    Default minimum init power up delay is 10ms.
-    Use this config to postpone init power up sequence if needs longer bootup time.
-
-config PMW3610_ALT_REPORT_INTERVAL_MIN
-	int "PMW3610's default minimum report rate"
-	default 0
-	help
-	  Default minimum report interval in milliseconds.
-		Slow down input reporting for hid queue over the air.
-		Turn value down to 8ms to get sharp response if use with USB only.
-
-config PMW3610_ALT_SMART_ALGORITHM
-  bool "Enable an algorithm of PMW3610 to enhance surface coverage"
-  default y
-  help
-    Enable the integration of the smart algorithm as the datasheet implementation.
-    The algorithm is used to extend the tracking acrocss a wider range of surfaces
-    such as graniles and tiles.
-
-config PMW3610_ALT_RUN_DOWNSHIFT_TIME_MS
-    int "PMW3610's default RUN mode downshift time"
-    default 128
-    range 13 3264
+menuconfig ZMK_INPUT_PMW3610
+    bool "PMW3610 mouse optical sensor"
+    default y
+    depends on DT_HAS_PIXART_PMW3610_ENABLED || DT_HAS_PIXART_PMW3610_ALT_ENABLED
+    select SPI
     help
-      Default RUN mode downshift down time in milliseconds.
-      Time after which sensor goes from RUN to REST1 mode.
+      Enable PMW3610 mouse optical sensor for ZMK.
 
-config PMW3610_ALT_REST1_DOWNSHIFT_TIME_MS
-    int "PMW3610's default REST1 mode downshift time"
-    default 5000
-    help
-      Default REST1 mode downshift down time in milliseconds.
-      Time after which sensor goes from REST1 to REST2 mode.
+if ZMK_INPUT_PMW3610
 
-config PMW3610_ALT_REST2_DOWNSHIFT_TIME_MS
-    int "PMW3610's default REST2 mode downshift time"
-    default 17000
-    help
-      Default REST2 mode downshift down time in milliseconds.
-      Time after which sensor goes from REST2 to REST3 mode.
+config ZMK_INPUT_PMW3610_CPI
+    int "CPI"
+    default 400
 
-config PMW3610_ALT_REST1_SAMPLE_TIME_MS
-    int "PMW3610's sample time in REST1 stage"
-    default 40
-    # range 10 2550
-    help
-      Default REST1 mode sample period in millisecond
+config ZMK_INPUT_PMW3610_CPI_DIVIDER
+    int "CPI Divider"
+    default 1
 
-config PMW3610_ALT_REST2_SAMPLE_TIME_MS
-    int "PMW3610's sample time in REST2 stage"
-    default 100
-    # range 10 2550
-    help
-      Default REST2 mode sample period in millisecond.
+config ZMK_INPUT_PMW3610_ORIENTATION_180
+    bool "Rotate 180 degrees"
+    default n
 
-config PMW3610_ALT_REST3_SAMPLE_TIME_MS
-    int "PMW3610's sample time in REST3 stage"
-    default 500
-    # range 10 2550
-    help
-      Default REST2 mode sample period in millisecond.
+config ZMK_INPUT_PMW3610_INVERT_X
+    bool "Invert X"
+    default n
 
-module = PMW3610_ALT
-module-str = PMW3610_ALT
-source "${ZEPHYR_BASE}/subsys/logging/Kconfig.template.log_config"
+config ZMK_INPUT_PMW3610_INVERT_Y
+    bool "Invert Y"
+    default n
 
-endif #PMW3610_ALT
+config ZMK_INPUT_PMW3610_INVERT_SCROLL_X
+    bool "Invert Scroll X"
+    default n
+
+config ZMK_INPUT_PMW3610_INVERT_SCROLL_Y
+    bool "Invert Scroll Y"
+    default n
+
+config ZMK_INPUT_PMW3610_SCROLL_TICK
+    int "Scroll Tick"
+    default 16
+
+config ZMK_INPUT_PMW3610_RUN_DOWNSHIFT_TIME_MS
+    int "Run Downshift Time"
+    default 3264
+
+config ZMK_INPUT_PMW3610_REST1_SAMPLE_TIME_MS
+    int "Rest 1 Sample Time"
+    default 20
+
+config ZMK_INPUT_PMW3610_POLLING_RATE_125_SW
+    bool "Software Polling 125Hz"
+    default n
+
+config ZMK_INPUT_PMW3610_AUTOMOUSE_TIMEOUT_MS
+    int "Auto-mouse Timeout"
+    default 700
+
+config ZMK_INPUT_PMW3610_MOVEMENT_THRESHOLD
+    int "Movement Threshold"
+    default 0
+
+config ZMK_INPUT_PMW3610_SMART_ALGORITHM
+    bool "Enable Smart Algorithm"
+    default y
+
+endif
