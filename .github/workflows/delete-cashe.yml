@@ -5,4 +5,4 @@ jobs:
   delete-cache:
     runs-on: ubuntu-latest
     steps:
-      - uses: kijiwakijiji/zmk-config-roBa@main
+      - uses: kisiwakijiji/zmk-config-roBa@main
