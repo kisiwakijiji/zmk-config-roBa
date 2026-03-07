@@ -1,8 +1,0 @@
-name: Delete Action Cache
-on:
-  workflow_dispatch:
-jobs:
-  delete-cache:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: kisiwakijiji/zmk-config-roBa@main
