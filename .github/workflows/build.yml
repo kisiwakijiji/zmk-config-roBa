@@ -3,3 +3,7 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    with:
+          # ZMKのワークフロー定義によりますが、一般的にキャッシュを無効化する指定
+          # 注意: 実際に ZMK 側がこの引数をサポートしているか確認が必要です
+          install_dependencies: trues
