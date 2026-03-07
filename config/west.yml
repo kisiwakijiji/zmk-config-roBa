@@ -2,17 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: urob
-      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    # 'name' を適当な名前にし、'repo-path' で実際のリポジトリを指定します
-    - name: pmw3610_driver_fresh
-      remote: urob
-      repo-path: zmk-pmw3610-driver
-      revision: main
   self:
     path: config
