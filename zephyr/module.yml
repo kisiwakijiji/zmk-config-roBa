@@ -1,6 +1,6 @@
 name: roBa
 build:
   kconfig: boards/shields/roBa/drivers/Kconfig
-  cmake: .
+  cmake: boards/shields/roBa/drivers
   settings:
     board_root: .
